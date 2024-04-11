@@ -10,10 +10,8 @@ The datasets used in our paper are collected by the Caltrans Performance Measure
 
 ## Requirements
 
-Python 3.6.5, Pytorch 1.1.0, Numpy 1.16.3, argparse and configparser
+Python 3.9.12, Torch 1.12.0+cu113, Numpy 1.23.0, argparse and configparser
 
 
+If you want to use the model for your own datasets, please load your dataset by revising "load_dataset" in the "lib" folder and remember tuning the learning rate (gradient norm can be used to facilitate the training).
 
-To replicate the results in PEMSD4 and PEMSD8 datasets, you can run the the codes in the "model" folder directly. If you want to use the model for your own datasets, please load your dataset by revising "load_dataset" in the "lib" folder and remember tuning the learning rate (gradient norm can be used to facilitate the training).
-
-Please cite our work if you find useful.
