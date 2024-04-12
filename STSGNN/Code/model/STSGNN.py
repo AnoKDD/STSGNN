@@ -197,10 +197,10 @@ class STSGNN(nn.Module):
 
         sp_matrix = load_spatialmatrix(self.dataset, self.num_nodes)
 
-        self.sp_matrix = sp_matrix.to('cuda:0')
+        self.sp_matrix = sp_matrix.to(self.device)
 
         tp_matrix = (F.pad(torch.eye(11), (0, 1, 1, 0), 'constant', 0) + F.pad(torch.eye(11), (1, 0, 0, 1), 'constant',
-                                                                               0)).to('cuda:0')
+                                                                               0)).to(self.device)
         dt = torch.sum(tp_matrix, dim=0)
         Dt = torch.diag(torch.rsqrt(dt))
         self.tp_matrix = torch.matmul(Dt, torch.matmul(tp_matrix, Dt))
